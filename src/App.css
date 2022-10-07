@@ -1,3 +1,19 @@
 .App {
   text-align: center;
+  font-size: 18px;
+}
+
+.dropDownFolder-enter {
+  height: 0;
+}
+.dropDownFolder-enter-active {
+  height: 1;
+  transition: height 200ms;
+}
+.dropDownFolder-exit {
+  height: 1;
+}
+.dropDownFolder-exit-active {
+  height: 0;
+  transition: height 200ms;
 }
