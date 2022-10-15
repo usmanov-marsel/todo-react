@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <div className="flex items-start mt-3">
+      <div className="md:flex items-start md:mt-3">
         <DropDownFolders />
         <div className="flex flex-1 flex-col">
           <TaskList />

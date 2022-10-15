@@ -1,4 +1,3 @@
-import { Divider } from "antd";
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { IFolder } from "../models/IFolder";
@@ -7,7 +6,7 @@ import Task from "./Task";
 
 const TaskList = () => {
   const { tasks, idCurrentFolder } = useAppSelector((state) => state.taskReducer);
-  const { fetchTasks, addTask, removeTask } = taskSlice.actions;
+  const { fetchTasks } = taskSlice.actions;
   const dispatch = useAppDispatch();
   const folder: IFolder = JSON.parse(localStorage.getItem(idCurrentFolder) || "{}");
   useEffect(() => {

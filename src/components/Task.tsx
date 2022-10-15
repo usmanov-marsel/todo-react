@@ -24,7 +24,7 @@ const Task = ({ task }: Props) => {
         </div>
         <div className="ml-auto w-9 h-9 mr-6 flex content-center items-center">
           <button onClick={() => dispatch(removeTask(task.id))}>
-            <DeleteIcon />
+            <DeleteIcon className="w-6 h-6" />
           </button>
         </div>
       </div>

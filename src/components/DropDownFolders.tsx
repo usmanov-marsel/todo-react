@@ -61,7 +61,7 @@ const DropDownFolders = () => {
   }, []);
 
   return (
-    <div className="w-72">
+    <div className="md:w-72 mb-6">
       <div
         className="group bg-sky-300 ring ring-gray-200 hover:text-slate-100 hover:bg-sky-500 flex items-center justify-center space-x-2 hover:cursor-pointer rounded-md"
         onClick={handleOpenDropDown}
@@ -69,12 +69,12 @@ const DropDownFolders = () => {
         <ArrowUpDown isOpen={isOpen} />
         <div>Folders</div>
       </div>
-      <ul className="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
+      <ul className="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none mb-2">
         {folders.map((folder, index) => (
           <Transition
             key={folder.id}
             show={isOpen}
-            enter={`transition-[height] duration-150`}
+            enter="transition-[height] duration-150"
             enterFrom="h-0"
             enterTo="h-9"
             leave="transition-[height] duration-150"
@@ -82,17 +82,14 @@ const DropDownFolders = () => {
             leaveTo="h-0"
           >
             <li
-              className={
-                index === 0
-                  ? "flex items-center justify-between h-9 py-1 hover:bg-sky-100 pr-6"
-                  : "flex items-center justify-between h-9 py-1 hover:bg-sky-100"
-              }
+              className={`flex items-center justify-between h-9 py-1 hover:bg-sky-100
+              ${index == 0 ? "pr-6" : null} ${folder.id === idCurrentFolder ? "bg-sky-100" : null}`}
               onClick={handleChangeFolder(folder.id)}
             >
               <div className="flex-1">{folder.name}</div>
               {index !== 0 ? (
                 <button className="mr-2" onClick={handleDeleteFolder(folder.id)}>
-                  <DeleteIcon />
+                  <DeleteIcon className="w-6 h-6" />
                 </button>
               ) : null}
             </li>
@@ -109,7 +106,7 @@ const DropDownFolders = () => {
             onPressEnter={handlePressInputEnter(nameFolder)}
           />
           <button onClick={() => setIsInputOpen(false)}>
-            <DeleteIcon />
+            <DeleteIcon className="w-6 h-6" />
           </button>
         </div>
       ) : null}

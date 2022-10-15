@@ -49,12 +49,12 @@ const AddTaskForm = () => {
 
   return (
     <div className="max-w-md mx-auto flex items-center">
-      <div className="flex items-center border-2">
-        Добавить задачу!
-        <Button type="primary" shape="circle" onClick={showModal} className="ml-1">
-          <PlusIcon />
-        </Button>
-      </div>
+      <Button type="primary" shape="round" size="large" onClick={showModal}>
+        <div className="flex justify-between items-center">
+          <PlusIcon className="w-6 h-6 mr-1 pt-1" />
+          Добавить задачу!
+        </div>
+      </Button>
       <Modal
         title="Добавление новой задачи"
         open={isModalOpen}
